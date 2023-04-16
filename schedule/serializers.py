@@ -1,10 +1,11 @@
-from rest_framework import serializers
-from .models import Schedule
+# serializers.py
 
+from rest_framework import serializers
+from schedule.models import Schedule
 
 class ScheduleSerializer(serializers.ModelSerializer):
-    # pk = serializers.IntegerField(read_only=True)
+    date = serializers.DateField(format="%Y-%m-%d")
 
     class Meta:
         model = Schedule
-        fields = "__all__"
+        fields = '__all__'

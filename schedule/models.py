@@ -1,23 +1,17 @@
-from asyncio import AbstractServer
-from typing import AbstractSet
 from django.db import models
 
 from common.models import CommonModel
-from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
+
 class Schedule(CommonModel):
-    """Schedule Model Definition"""
-
     content = models.TextField()
     date = models.DateField()
-    starttime = models.PositiveIntegerField()
-    endtime = models.PositiveIntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    startTime = models.IntegerField()
+    endTime = models.IntegerField()
 
     def __str__(self):
-        return str(self.pk)
+        return str(self.id)
+
 
 
 class ScheduleDetail(CommonModel):
@@ -28,10 +22,10 @@ class ScheduleDetail(CommonModel):
     )
     content = models.TextField()
     date = models.DateField()
-    starttime = models.PositiveIntegerField()
-    endtime = models.PositiveIntegerField()
+    startTime = models.IntegerField()
+    endTime = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.pk)
+        return str(self.id)
